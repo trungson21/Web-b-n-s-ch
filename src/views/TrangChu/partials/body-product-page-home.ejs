@@ -1,0 +1,180 @@
+<!-- Begin Li's Static Banner Area -->
+<div class="li-static-banner pt-20 pt-sm-30 pt-xs-30">
+    <div class="container">
+        <div class="row">
+            <!-- Begin Single Banner Area -->
+            <div class="col-lg-4 col-md-4">
+                <div class="single-banner pb-xs-30">
+                    <a href="#">
+                        <img src="pageHome/images/banner/1_3.jpg" alt="Li's Static Banner">
+                    </a>
+                </div>
+            </div>
+            <!-- Single Banner Area End Here -->
+            <!-- Begin Single Banner Area -->
+            <div class="col-lg-4 col-md-4">
+                <div class="single-banner pb-xs-30">
+                    <a href="#">
+                        <img src="pageHome/images/banner/1_4.jpg" alt="Li's Static Banner">
+                    </a>
+                </div>
+            </div>
+            <!-- Single Banner Area End Here -->
+            <!-- Begin Single Banner Area -->
+            <div class="col-lg-4 col-md-4">
+                <div class="single-banner">
+                    <a href="#">
+                        <img src="pageHome/images/banner/1_5.jpg" alt="Li's Static Banner">
+                    </a>
+                </div>
+            </div>
+            <!-- Single Banner Area End Here -->
+        </div>
+    </div>
+</div>
+<!-- Li's Static Banner Area End Here -->
+
+<!-- Begin Li's Special Product Area -->
+
+<!-- Li's Special Product Area End Here -->
+<!-- Begin Li's Laptops Product | Home V2 Area -->
+<section class="product-area li-laptop-product li-laptop-product-2 pb-45">
+    <div class="container">
+        <div class="row">
+            <!-- Begin Li's Section Area -->
+            <div class="col-lg-12">
+                <div class="li-section-title">
+                    <h2>
+                        <span class="font-weight-bold" style="font-family: Arial, Helvetica, sans-serif; color: navy;text-transform:uppercase;">
+                            <!-- <img width="50" src="pageHome/jsXuLyCacChucNang/icons8-laptop.gif" alt="">                     -->
+                            <span style="position: relative;top: 15px;">&nbsp; SẢN PHẨM TRONG CỬA HÀNG</span>
+                        </span>
+                    </h2>
+                </div>
+                
+                <div class="row">
+                    <div class="product-active owl-carousel">
+                        
+                        <% if (sanPham && sanPham.length > 0) { %>
+                            <% sanPham.forEach(function(sp, index) { %> 
+
+                                <% if (sp.GiamGiaTheoNgay === 0) { %> 
+                                    <div class="col-lg-12">
+                                    <%- include("../partials/product-1-phan.ejs", { sp: sp }) %>
+                                    </div>
+                                    <!-- <% if(sp.IdLoaiSP.TenLoaiSP === "") { %>
+                                    <% } %>  -->
+                                <% } %> 
+                                                           
+                            <% }) %>
+                        <% } else { %> 
+                            <p>Chưa có sản phẩm</p>
+                        <% } %>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Li's Section Area End Here -->
+        </div>
+    </div>
+</section>
+<!-- Li's Laptops Product | Home V2 Area End Here -->
+<!-- Begin Li's TV & Audio Product Area -->
+
+<!-- Li's TV & Audio Product Area End Here -->
+
+
+<!-- Begin Li's Trending Product | Home V2 Area -->
+<section class="product-area li-trending-product li-trending-product-2 pt-60 pb-45">
+    <div class="container">
+        <div class="row">
+            <!-- Begin Li's Tab Menu Area -->
+            <div class="col-lg-12">
+                <div class="li-product-tab li-trending-product-tab">
+                    <!-- <h2> -->
+                        <span style="text-transform:uppercase;font-family: Arial, Helvetica, sans-serif;color: navy;font-weight: bold;font-size: 20px;">
+                            <img width="45" height="45" src="pageHome/jsXuLyCacChucNang/icons8-us-dollar-circled.gif" alt="">                    
+                            &nbsp; Sản phẩm bán chạy nhất
+                        </span>
+                        <!-- <span title="Các sản phẩm đã được bán trên 50 sản phẩm" 
+                                class="font-weight-bold" 
+                                style="text-transform:uppercase;font-family: Arial, Helvetica, sans-serif;color: navy;">
+                                Sản phẩm bán chạy nhất
+                        </span> -->
+                    <!-- </h2> -->
+                    <ul class="nav li-product-menu li-trending-product-menu">
+                       <li><a class="active" data-toggle="tab" href="#mayTinh"><span>Sách mầm non</span></a></li>
+                       <li><a data-toggle="tab" href="#dienThoai"><span>Sách kĩ năng</span></a></li>
+                       <li><a data-toggle="tab" href="#mh-mt"><span>Sách kinh doanh</span></a></li>                       
+                    </ul>               
+                </div>
+                <!-- Begin Li's Tab Menu Content Area -->
+                <div class="tab-content li-tab-content li-trending-product-content">
+                    <div id="mayTinh" class="tab-pane show fade in active">
+                        <div class="row">
+                            <div class="product-active owl-carousel">
+                                
+                                <% if (spBanChay && spBanChay.length > 0) { %>
+                                    <% spBanChay.forEach(function(sp, index) { %> 
+
+                                        <% if (sp.GiamGiaTheoNgay === 0) { %> 
+                                            <% if(sp.IdLoaiSP.TenLoaiSP == "Tiểu Thuyết") { %>
+                                                <%- include("../partials/product-1-phan.ejs", { sp: sp }) %>
+                                            <% } %> 
+                                        <% } %> 
+                                                                
+                                    <% }) %>
+                                <% } else { %> 
+                                    <p>Chưa có sản phẩm</p>
+                                <% } %>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div id="dienThoai" class="tab-pane fade">
+                        <div class="row">
+                            <div class="product-active owl-carousel">
+                                <% if (spBanChay && spBanChay.length > 0) { %>
+                                    <% spBanChay.forEach(function(sp, index) { %> 
+
+                                        <% if (sp.GiamGiaTheoNgay === 0) { %> 
+                                            <% if(sp.IdLoaiSP.TenLoaiSP == "Truyện Hay") { %>
+                                                <%- include("../partials/product-1-phan.ejs", { sp: sp }) %>
+                                            <% } %> 
+                                        <% } %> 
+                                                                
+                                    <% }) %>
+                                <% } else { %> 
+                                    <p>Chưa có sản phẩm</p>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mh-mt" class="tab-pane fade">
+                        <div class="row">
+                            <div class="product-active owl-carousel">
+                                <% if (spBanChay && spBanChay.length > 0) { %>
+                                    <% spBanChay.forEach(function(sp, index) { %> 
+
+                                        <% if (sp.GiamGiaTheoNgay === 0) { %> 
+                                            <% if(sp.IdLoaiSP.TenLoaiSP == "Sách Việt") { %>
+                                                <%- include("../partials/product-1-phan.ejs", { sp: sp }) %>
+                                            <% } %> 
+                                        <% } %> 
+                                                                
+                                    <% }) %>
+                                <% } else { %> 
+                                    <p>Chưa có sản phẩm</p>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>                   
+                </div>
+                <!-- Tab Menu Content Area End Here -->
+            </div>
+            <!-- Tab Menu Area End Here -->
+        </div>
+    </div>
+</section>
+<!-- Li's Trending Product | Home V2 Area End Here -->
